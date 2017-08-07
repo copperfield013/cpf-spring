@@ -106,7 +106,11 @@ public class FieldRefectUtils<T> {
 			while(cClass != Object.class){
 					try {
 						method = cClass.getDeclaredMethod("get" + upcaseFirst(fieldName));
-					} catch (NoSuchMethodException | SecurityException e) {}
+					} catch (NoSuchMethodException | SecurityException e) {
+						try {
+							method = cClass.getDeclaredMethod("get" + fieldName);
+						} catch (NoSuchMethodException | SecurityException e1) {}
+					}
 					if(method != null){
 						getterMap.put(fieldName, method);
 					}else{
@@ -128,10 +132,13 @@ public class FieldRefectUtils<T> {
 			while(cClass != Object.class){
 				try {
 					method = cClass.getDeclaredMethod("set" + upcaseFirst(fieldName), field.getType());
-					if(method != null){
-						setterMap.put(fieldName, method);
-					}
 				} catch (NoSuchMethodException | SecurityException e) {
+					try {
+						method = cClass.getDeclaredMethod("set" + fieldName, field.getType());
+					} catch (NoSuchMethodException | SecurityException e1) {}
+				}
+				if(method != null){
+					setterMap.put(fieldName, method);
 				}
 				cClass = cClass.getSuperclass();
 			}

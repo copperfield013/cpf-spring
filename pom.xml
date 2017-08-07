@@ -10,7 +10,7 @@
 	
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>${version.cpf}</version>
+	<version>0.21</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
