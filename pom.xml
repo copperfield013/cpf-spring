@@ -5,12 +5,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>4.3.4.RELEASE</version.spring>
-		<version.cpf>0.2</version.cpf>
+		<version.cpf>0.3</version.cpf>
 	</properties>
 	
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>0.21</version>
+	<version>0.3</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
