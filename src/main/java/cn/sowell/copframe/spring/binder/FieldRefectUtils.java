@@ -2,6 +2,7 @@ package cn.sowell.copframe.spring.binder;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -77,7 +78,9 @@ public class FieldRefectUtils<T> {
 				Field[] fields = cClass.getDeclaredFields();
 				for (Field field : fields) {
 					String fieldName = field.getName();
-					if(!fieldNameMap.containsKey(fieldName)){
+					if(!fieldNameMap.containsKey(fieldName) 
+							&& !Modifier.isStatic(field.getModifiers())
+							&& !Modifier.isFinal(field.getModifiers())){
 						String key = fieldName;
 						XMLTag tag = field.getDeclaredAnnotation(XMLTag.class);
 						if(tag != null && !tag.tagName().isEmpty()){
