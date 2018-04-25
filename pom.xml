@@ -2,20 +2,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.spring>4.3.4.RELEASE</version.spring>
-		<version.cpf>0.3</version.cpf>
-	</properties>
-	
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>0.3</version>
+	<version>0.3.8</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
 	<url>http://maven.apache.org</url>
-
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.spring>4.3.4.RELEASE</version.spring>
+		<version.cpf>0.3.8</version.cpf>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -49,6 +48,11 @@
 			<artifactId>spring-beans</artifactId>
 			<version>${version.spring}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
 	</dependencies>
 	
 	<distributionManagement>
@@ -57,11 +61,17 @@
             <url>http://192.168.1.6:8081/nexus/content/repositories/thirdparty/</url>
         </repository> -->
         <repository>
-        	<id>aliyun51-nexus</id>
-        	<url>http://106.14.249.51:32108/repository/nexus/</url>
+        	<id>aliyun44-nexus</id>
+        	<url>http://139.196.123.44:32108/repository/nexus/</url>
         </repository>
     </distributionManagement>
-	
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<name>nexus</name>
+			<url>http://139.196.123.44:32108/repository/nexus-group/</url>
+		</repository>
+	</repositories>
 	<build>
 		<plugins>
 			<plugin>
