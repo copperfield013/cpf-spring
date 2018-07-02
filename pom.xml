@@ -4,7 +4,7 @@
 
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>0.3.10</version>
+	<version>0.3.12</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>4.3.4.RELEASE</version.spring>
-		<version.cpf>0.3.10</version.cpf>
+		<version.cpf>0.3.12</version.cpf>
 	</properties>
 
 	<dependencies>
