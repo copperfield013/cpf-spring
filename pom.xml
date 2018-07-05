@@ -4,7 +4,7 @@
 
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>0.3.12</version>
+	<version>0.3.13</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>4.3.4.RELEASE</version.spring>
-		<version.cpf>0.3.12</version.cpf>
+		<version.cpf>0.3.13</version.cpf>
 	</properties>
 
 	<dependencies>
@@ -37,6 +37,12 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
