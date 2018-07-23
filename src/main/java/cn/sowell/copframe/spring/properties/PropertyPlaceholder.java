@@ -10,23 +10,22 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 public class PropertyPlaceholder extends PropertyPlaceholderConfigurer {
 
-	private static Map<String, String> propertyMap;
+	private static final Map<String, String> propertyMap = new HashMap<String, String>();
 
 	@Override
 	protected void processProperties(
 			ConfigurableListableBeanFactory beanFactoryToProcess,
 			Properties props) throws BeansException {
 		super.processProperties(beanFactoryToProcess, props);
-		propertyMap = new HashMap<String, String>();
 		for (Object key : props.keySet()) {
 			String keyStr = key.toString();
 			String value = props.getProperty(keyStr);
-			propertyMap.put(keyStr, value);
+			PropertyPlaceholder.propertyMap.put(keyStr, value);
 		}
 	}
 
 	public static String getProperty(String name) {
-		String value = propertyMap.get(name);
+		String value = PropertyPlaceholder.propertyMap.get(name);
 		if(value == null){
 			throw new PropertyUndefinedException(name);
 		}
