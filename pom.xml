@@ -4,7 +4,7 @@
 
 	<groupId>cn.sowell.copframe</groupId>
 	<artifactId>cpf-spring</artifactId>
-	<version>0.3.14</version>
+	<version>0.3.15</version>
 	<packaging>jar</packaging>
 
 	<name>cpf-spring</name>
@@ -57,6 +57,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 			<version>${version.spring}</version>
 		</dependency>
 	</dependencies>
