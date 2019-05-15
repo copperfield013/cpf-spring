@@ -73,6 +73,10 @@ public class FilePublisher{
 		}
 		return null;
 	}
+	
+	public boolean containsCode(String fileCode) {
+		return fileNameMap.containsKey(fileCode);
+	}
 
 	private String getURL(FileHaunt file) {
 		if(file != null) {
